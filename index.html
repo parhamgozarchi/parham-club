@@ -2,80 +2,21 @@
 <html lang="fa" dir="rtl" class="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.9">
-    <title>هوش مصنوعی من</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هوش مصنوعی پرهام گذرچی نژاد</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Vazirmatn', 'sans-serif'] }
-                }
-            }
+            theme: { extend: { fontFamily: { sans: ['Vazirmatn', 'sans-serif'] } } }
         }
     </script>
     <style>
         body { font-family: 'Vazirmatn', sans-serif; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .chat-markdown h3 { font-size: 1.15rem; font-weight: 700; margin-top: 0.75rem; margin-bottom: 0.5rem; }
-        .chat-markdown strong { font-weight: 700; }
-        .chat-markdown code.inline-code {
-            background-color: rgba(226, 232, 240, 0.7);
-            color: #2563eb;
-            font-family: monospace;
-            font-size: 0.85em;
-            padding: 0.15rem 0.35rem;
-            border-radius: 0.375rem;
-            direction: ltr;
-            display: inline-block;
-        }
-        .dark .chat-markdown code.inline-code {
-            background-color: rgba(30, 41, 59, 0.8);
-            color: #60a5fa;
-        }
-        .code-block-wrapper {
-            margin: 0.75rem 0;
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            overflow: hidden;
-            border: 1px solid rgba(203, 213, 225, 0.8);
-            direction: ltr;
-            text-align: left;
-        }
-        .dark .code-block-wrapper { background-color: #0f172a; border-color: #334155; }
-        .code-block-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #f8fafc;
-            padding: 0.5rem 1rem;
-            font-size: 0.75rem;
-            color: #64748b;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-        }
-        .dark .code-block-header { background-color: #1e293b; color: #94a3b8; }
-        .code-block-content {
-            padding: 1rem;
-            overflow-x: auto;
-            color: #0f172a;
-            font-family: monospace;
-            font-size: 0.875rem;
-            white-space: pre;
-        }
-        .dark .code-block-content { color: #f8fafc; }
-        .copy-code-btn {
-            background: rgba(226, 232, 240, 0.6);
-            border: none;
-            color: #475569;
-            padding: 0.25rem 0.6rem;
-            border-radius: 0.35rem;
-            cursor: pointer;
-            font-size: 0.7rem;
-        }
         @keyframes bounce-dot {
             0%, 80%, 100% { transform: translateY(0); opacity: 0.3; }
             40% { transform: translateY(-6px); opacity: 1; }
@@ -85,144 +26,74 @@
         .dot-3 { animation: bounce-dot 1.4s infinite ease-in-out both; }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 h-screen flex flex-col overflow-hidden transition-colors duration-300">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 h-screen flex flex-col overflow-hidden">
 
-    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3 flex items-center justify-between shrink-0 shadow-sm z-20">
-        <div class="flex items-center gap-3">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 rounded-2xl bg-indigo-500 text-white flex items-center justify-center text-xl shadow-md">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-                <div>
-                    <h1 class="font-bold text-base text-slate-900 dark:text-white">هوش مصنوعی من</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">ساخته شده با Cloudflare Workers AI</p>
-                </div>
+    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3 flex items-center justify-between shrink-0 shadow-sm">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-2xl bg-indigo-500 text-white flex items-center justify-center text-xl shadow-md">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <div>
+                <h1 class="font-bold text-base">هوش مصنوعی پرهام گذرچی نژاد</h1>
+                <p class="text-xs text-slate-500 dark:text-slate-400">دستیار هوشمند شخصی</p>
             </div>
         </div>
         <div class="flex items-center gap-2">
-            <button type="button" id="theme-toggle-btn" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+            <button type="button" id="theme-toggle-btn" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200">
                 <i class="fa-solid fa-moon dark:hidden"></i>
                 <i class="fa-solid fa-sun hidden dark:inline text-amber-400"></i>
             </button>
-            <button type="button" id="new-chat-btn" class="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold transition">
+            <button type="button" id="new-chat-btn" class="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold">
                 <i class="fa-solid fa-plus"></i> گفتگوی جدید
             </button>
         </div>
     </header>
 
-    <div class="flex-1 flex overflow-hidden">
-        <main class="flex-1 flex flex-col bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
-            <div id="chat-container" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 max-w-4xl w-full mx-auto">
-                <div id="welcome-view" class="h-full flex flex-col items-center justify-center text-center px-2 py-4">
-                    <div class="w-24 h-24 rounded-3xl bg-indigo-500 text-white flex items-center justify-center text-5xl shadow-xl mb-4">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">سلام! چطور می‌تونم کمکت کنم؟</h2>
-                    <p class="text-slate-500 dark:text-slate-400 max-w-md text-sm">این یک نسخه کاملاً رایگان است. سوال خودت رو بنویس و بفرست.</p>
-                </div>
-                <div id="messages-list" class="space-y-4 hidden"></div>
-            </div>
+    <main class="flex-1 flex flex-col overflow-hidden">
+        <div id="chat-container" class="flex-1 overflow-y-auto p-4 space-y-4 max-w-4xl w-full mx-auto">
+            <div id="messages-list" class="space-y-4"></div>
+        </div>
 
-            <div class="p-3 sm:p-4 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 max-w-4xl w-full mx-auto shrink-0">
-                <form id="chat-form" class="relative">
-                    <div class="flex items-end bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-2xl p-2 focus-within:border-indigo-500 transition">
-                        <textarea id="user-input" rows="1" placeholder="سوالت رو بنویس..." 
-                            class="flex-1 bg-transparent border-none outline-none resize-none px-3 py-2 text-slate-800 dark:text-slate-100 text-sm max-h-32 hide-scrollbar"></textarea>
-                        <button type="submit" id="send-btn" class="p-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition shadow-md shrink-0 w-10 h-10 flex items-center justify-center">
-                            <i class="fa-solid fa-paper-plane text-sm"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </main>
-    </div>
+        <div class="p-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 max-w-4xl w-full mx-auto shrink-0">
+            <form id="chat-form">
+                <div class="flex items-end bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-2xl p-2">
+                    <textarea id="user-input" rows="1" placeholder="سوالت رو بنویس..." 
+                        class="flex-1 bg-transparent border-none outline-none resize-none px-3 py-2 text-sm max-h-32 hide-scrollbar"></textarea>
+                    <button type="submit" class="p-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shrink-0 w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
 
     <script>
-        // ============ آدرس Worker شما (قبلاً تنظیم شده) ============
         const WORKER_API_URL = "https://delicate-wood-5c58.parhamgozarchi40.workers.dev/";
-        // ==========================================================
 
-        let appState = {
-            darkMode: false,
-            chats: [],
-            activeChatId: null
-        };
+        const SYSTEM_PROMPT = `تو یک دستیار هوش مصنوعی شخصی هستی که توسط «پرهام گذرچی نژاد» ساخته شده است. اگر پرسیدند چه کسی تو را ساخته، بگو: «من توسط پرهام گذرچی نژاد ساخته شده‌ام.» همیشه فارسی، دوستانه و مودبانه جواب بده.`;
 
-        function escapeHtml(text) {
-            if (!text) return '';
-            const map = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
-            return String(text).replace(/[&<>"']/g, function(m) { return map[m]; });
-        }
+        const WELCOME_MESSAGE = `سلام 👋
 
-        function formatMessageContent(content) {
-            if (!content) return '';
-            content = content.replace(/```([a-z]*)\n([\s\S]*?)```/g, (match, lang, code) => {
-                const escapedCode = escapeHtml(code.trim());
-                return `
-                    <div class="code-block-wrapper">
-                        <div class="code-block-header">
-                            <span>${lang || 'code'}</span>
-                            <button type="button" class="copy-code-btn" onclick="copyCodeSnippet(this)">
-                                <i class="fa-regular fa-copy"></i> کپی کد
-                            </button>
-                        </div>
-                        <pre class="code-block-content"><code>${escapedCode}</code></pre>
-                    </div>
-                `;
-            });
-            content = content.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
-            content = content.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-            content = content.replace(/^### (.*$)/gm, '<h3>$1</h3>');
-            content = content.replace(/^## (.*$)/gm, '<h3>$1</h3>');
-            content = content.replace(/^# (.*$)/gm, '<h3>$1</h3>');
-            content = content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" class="text-indigo-600 underline">$1</a>');
-            return content;
-        }
+من هوش مصنوعی پرهام گذرچی نژاد هستم.
 
-        function copyCodeSnippet(btn) {
-            const wrapper = btn.closest('.code-block-wrapper');
-            const codeElem = wrapper.querySelector('code');
-            navigator.clipboard.writeText(codeElem.innerText).then(() => {
-                btn.innerHTML = `<i class="fa-solid fa-check"></i> کپی شد!`;
-                setTimeout(() => {
-                    btn.innerHTML = `<i class="fa-regular fa-copy"></i> کپی کد`;
-                }, 2000);
-            });
-        }
+از پرهام گذرچی نژاد ساخته شده‌ام. هر سوالی داری بپرس! 😊`;
+
+        let appState = { darkMode: false, chats: [], activeChatId: null };
 
         window.addEventListener('DOMContentLoaded', () => {
-            loadFromLocalStorage();
+            const saved = localStorage.getItem('free_ai_state');
+            if (saved) { try { appState = JSON.parse(saved); } catch(e) {} }
             applyTheme();
             if (!appState.activeChatId) createNewChat();
             initEventListeners();
         });
 
-        function loadFromLocalStorage() {
-            const saved = localStorage.getItem('free_ai_state');
-            if (saved) {
-                try { appState = JSON.parse(saved); } catch(e) {}
-            }
-        }
-
-        function saveToLocalStorage() {
-            localStorage.setItem('free_ai_state', JSON.stringify(appState));
-        }
+        function saveToLocalStorage() { localStorage.setItem('free_ai_state', JSON.stringify(appState)); }
 
         function applyTheme() {
             const htmlElem = document.documentElement;
-            if (appState.darkMode) {
-                htmlElem.classList.add('dark');
-                htmlElem.classList.remove('light');
-            } else {
-                htmlElem.classList.remove('dark');
-                htmlElem.classList.add('light');
-            }
+            if (appState.darkMode) { htmlElem.classList.add('dark'); htmlElem.classList.remove('light'); }
+            else { htmlElem.classList.remove('dark'); htmlElem.classList.add('light'); }
         }
 
         function initEventListeners() {
@@ -231,9 +102,7 @@
                 applyTheme();
                 saveToLocalStorage();
             });
-
             document.getElementById('new-chat-btn').addEventListener('click', () => createNewChat());
-
             document.getElementById('chat-form').addEventListener('submit', handleSendMessage);
 
             const userInput = document.getElementById('user-input');
@@ -253,65 +122,50 @@
             const newChat = {
                 id: 'chat_' + Date.now(),
                 title: 'گفتگوی جدید',
-                messages: []
+                messages: [{ role: 'assistant', content: WELCOME_MESSAGE }]
             };
             appState.chats.unshift(newChat);
             appState.activeChatId = newChat.id;
             saveToLocalStorage();
-            loadActiveChatMessages();
+            loadMessages();
         }
 
         function getActiveChat() {
             if (!appState.chats.length) createNewChat();
             let active = appState.chats.find(c => c.id === appState.activeChatId);
-            if (!active) {
-                active = appState.chats[0];
-                appState.activeChatId = active.id;
-            }
+            if (!active) { active = appState.chats[0]; appState.activeChatId = active.id; }
             return active;
         }
 
-        function loadActiveChatMessages() {
-            const chat = getActiveChat();
-            const welcomeView = document.getElementById('welcome-view');
-            const messagesList = document.getElementById('messages-list');
-
-            if (!chat.messages.length) {
-                welcomeView.classList.remove('hidden');
-                messagesList.classList.add('hidden');
-                messagesList.innerHTML = '';
-            } else {
-                welcomeView.classList.add('hidden');
-                messagesList.classList.remove('hidden');
-                messagesList.innerHTML = chat.messages.map((m, i) => renderMessageHtml(m, i)).join('');
-                scrollToBottom();
-            }
+        function escapeHtml(text) {
+            if (!text) return '';
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return String(text).replace(/[&<>"']/g, function(m) { return map[m]; });
         }
 
-        function renderMessageHtml(msg, index) {
-            const isUser = msg.role === 'user';
-            const formatted = formatMessageContent(msg.content);
-
-            if (isUser) {
-                return `
-                    <div class="flex justify-end mb-4">
-                        <div class="max-w-[85%] bg-indigo-600 text-white rounded-3xl rounded-tl-sm px-5 py-3 text-sm shadow-sm leading-relaxed">
-                            <div class="chat-markdown whitespace-pre-wrap">${formatted}</div>
-                        </div>
-                    </div>
-                `;
-            } else {
-                return `
-                    <div class="flex justify-start mb-4 gap-3">
+        function loadMessages() {
+            const chat = getActiveChat();
+            const list = document.getElementById('messages-list');
+            list.innerHTML = '';
+            chat.messages.forEach(msg => {
+                const div = document.createElement('div');
+                if (msg.role === 'user') {
+                    div.className = 'flex justify-end mb-4';
+                    div.innerHTML = `
+                        <div class="max-w-[85%] bg-indigo-600 text-white rounded-3xl rounded-tl-sm px-5 py-3 text-sm shadow-sm whitespace-pre-wrap">${escapeHtml(msg.content)}</div>
+                    `;
+                } else {
+                    div.className = 'flex justify-start mb-4 gap-3';
+                    div.innerHTML = `
                         <div class="w-8 h-8 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-sm shadow-md shrink-0 mt-1">
                             <i class="fa-solid fa-robot"></i>
                         </div>
-                        <div class="max-w-[85%] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 rounded-3xl rounded-tr-sm px-5 py-4 text-sm shadow-sm leading-relaxed">
-                            <div class="chat-markdown">${formatted}</div>
-                        </div>
-                    </div>
-                `;
-            }
+                        <div class="max-w-[85%] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 rounded-3xl rounded-tr-sm px-5 py-4 text-sm shadow-sm whitespace-pre-wrap">${escapeHtml(msg.content)}</div>
+                    `;
+                }
+                list.appendChild(div);
+            });
+            scrollToBottom();
         }
 
         function scrollToBottom() {
@@ -321,28 +175,29 @@
 
         async function handleSendMessage(e) {
             e.preventDefault();
-            const userInputElem = document.getElementById('user-input');
-            const text = userInputElem.value.trim();
+            const input = document.getElementById('user-input');
+            const text = input.value.trim();
             if (!text) return;
 
-            userInputElem.value = '';
-            userInputElem.style.height = 'auto';
+            input.value = '';
+            input.style.height = 'auto';
 
             const chat = getActiveChat();
             chat.messages.push({ role: 'user', content: text });
 
-            if (chat.messages.length === 1) {
+            if (chat.messages.length === 2) {
                 chat.title = text.length > 25 ? text.substring(0, 25) + '...' : text;
             }
 
             saveToLocalStorage();
-            loadActiveChatMessages();
+            loadMessages();
 
-            const messagesList = document.getElementById('messages-list');
-            const thinkingDiv = document.createElement('div');
-            thinkingDiv.id = 'thinking-indicator';
-            thinkingDiv.className = 'flex justify-start mb-4 gap-3';
-            thinkingDiv.innerHTML = `
+            // نمایش "در حال پردازش"
+            const list = document.getElementById('messages-list');
+            const thinking = document.createElement('div');
+            thinking.id = 'thinking-indicator';
+            thinking.className = 'flex justify-start mb-4 gap-3';
+            thinking.innerHTML = `
                 <div class="w-8 h-8 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-sm shadow-md shrink-0 mt-1">
                     <i class="fa-solid fa-robot"></i>
                 </div>
@@ -355,21 +210,24 @@
                     </div>
                 </div>
             `;
-            messagesList.appendChild(thinkingDiv);
+            list.appendChild(thinking);
             scrollToBottom();
 
             try {
-                const apiMessages = chat.messages.map(m => ({ role: m.role, content: m.content }));
+                const apiMessages = [
+                    { role: "system", content: SYSTEM_PROMPT },
+                    ...chat.messages
+                        .filter((m, i) => !(i === 0 && m.role === 'assistant'))
+                        .map(m => ({ role: m.role, content: m.content }))
+                ];
 
                 const response = await fetch(WORKER_API_URL, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ messages: apiMessages })
                 });
 
-                if (!response.ok) throw new Error(`خطای سرور: ${response.status}`);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
                 const data = await response.json();
                 let reply = 'پاسخی دریافت نشد.';
@@ -378,21 +236,18 @@
                 } else if (data.response) {
                     reply = data.response;
                 } else if (data.error) {
-                    reply = `❌ خطا: ${data.error}`;
+                    reply = `❌ ${data.error}`;
                 }
 
                 chat.messages.push({ role: 'assistant', content: reply });
                 saveToLocalStorage();
             } catch (err) {
-                chat.messages.push({ 
-                    role: 'assistant', 
-                    content: `❌ خطا: ${err.message}\n\nمطمئن شو که به اینترنت وصل هستی و Worker فعال است.` 
-                });
+                chat.messages.push({ role: 'assistant', content: `❌ خطا: ${err.message}` });
                 saveToLocalStorage();
             } finally {
-                const thinking = document.getElementById('thinking-indicator');
-                if (thinking) thinking.remove();
-                loadActiveChatMessages();
+                const t = document.getElementById('thinking-indicator');
+                if (t) t.remove();
+                loadMessages();
             }
         }
     </script>
